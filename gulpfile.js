@@ -91,9 +91,9 @@ function startWatch() {
     watch(['src/**/*.html'], html);
     watch(['src/**/*.html']).on('change', browserSync.reload);
     watch(['src/images/**/*'], images);
-    watch(['src/svg/src/**/*'], svgsprite);
+    watch(['src/src/svg/stack/*.svg'], svgsprite);
     watch(['src/fonts/**/*'], fonts);
-    watch(['src/svg/src/**/*'], svgsprite)
+    watch(['src/src/svg/stack/*.svg'], svgsprite)
 }
 
 
@@ -113,7 +113,7 @@ function video() {
 
 // Спрайт для векторной графики
 function svgsprite() {
-    return src('src/svg/src/**/*')
+    return src('src/svg/stack/*.svg')
         .pipe(sprite({
             shape: {
                 dimension: {
