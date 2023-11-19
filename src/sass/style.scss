@@ -1,11 +1,11 @@
-
-
 // Libs
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
 
 // Main
 @import "support";
 @import "all";
 @import "script-classes";
 @import "header";
+@import "pages/main";
 @import "footer";
 @import "media";
