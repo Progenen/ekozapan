@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    if (window.innerWidth >= 876) {
+        const catMenuTabsTitles = document.querySelectorAll(".header__catmenu-tabs-titles>li");
+        const catMenuTabsContents = document.querySelectorAll(".header__catmenu-tabs-contents>li");
+        catMenuTabsTitles.forEach((element, i) => {
+            element.addEventListener("click", () => {
+                catMenuTabsTitles.forEach((el2, i2) => {
+                    el2.classList.remove("active");
+                    catMenuTabsContents[i2].classList.remove("active");
+                })
+                element.classList.toggle("active");
+                catMenuTabsContents[i].classList.toggle("active");
+            });
+        });
+    }
+
     // const burger = document.querySelector(".header__burger");
     // const menu = document.querySelector(".header__col--menu");
     // const header = document.querySelector("header");
@@ -18,13 +34,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const headerMenu = document.querySelector(".header__menu");
     const headerMobBtn = document.querySelector(".header__burger");
     const headerCat = document.querySelector(".header__cat");
-    const headerCatMenu = document.querySelector(".header__catmenu");
     const catMenuSwitch = document.querySelectorAll(".header__catmenu-switch")
     const mobMenu = document.querySelector(".mobmenu");
     const header = document.querySelector("header");
     const mainCatalogItems = document.querySelectorAll(".main-catalog__item");
     const mainCatalogMore = document.querySelector(".main-catalog__more-btn");
     const sections = document.querySelectorAll("section");
+    const headerCatMenu = document.querySelector(".header__catmenu");
 
     // Main menu func
 

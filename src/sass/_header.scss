@@ -203,9 +203,8 @@
             }
             
         }
-        &:hover + .header__catmenu {
-            opacity: 1;
-            visibility: visible;
+        &:focus + .header__catmenu {
+            display: block;
         }
     }
 
@@ -231,22 +230,21 @@
         background-color: #fff;
         border-radius: 0px 0px 10px 10px;
         padding-top: 15px;
-        opacity: 0;
-        visibility: hidden;
-        transition: .2s;
+        display: none;
         z-index: 111;
         &:hover {
-            opacity: 1;
-            visibility: visible;
+            display: block;
         }
     }
 
+    &__catmenu-lists {
+        display: flex;
+        background-color: #fff;
+        z-index: 2;
+    }
+
     &__catmenu-container {
-        max-width: 1141px;
-        width: 100%;
-        padding: 0 15px;
-        margin-left: auto;
-        margin-right: auto;
+        height: fit-content;
     }
 
     &__catmenu-head {
@@ -263,66 +261,48 @@
         font-weight: 600;
         line-height: 22px; /* 137.5% */
         padding: 6px 0;
+        display: none;
     }
 
     &__catmenu-back {
         display: none;
     }
 
-    &__catmenu-lists {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
     &__catmenu-list {
         list-style: none;
-        padding: 0 44px 0 0;
+        padding: 0;
         margin: 15px 0 0 0;
-        position: relative;
-        
-        &:first-child::after {
-            display: none;
+
+        li {
         }
-        &::after {
-            content: "";
-            position: absolute;
-            height: 115px;
-            width: 1px;  
-            left: -22px;
-            top: 5px;
-            background-color: #D8D8D8;
+
+        li a {
         }
     }
 
-    &__catmenu-list-item {
-        margin-bottom: 14px;
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    &__catmenu-list-title &__catmenu-list-link {
-        color: #4B4F59;
-        &:hover {
+    &__catmenu-item {
+        display: flex;
+        align-items:center;
+        a {
             color: #4B4F59;
-            border-color: transparent;
+            font-family: Montserrat;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-decoration: none;
+
         }
+        
     }
 
-    &__catmenu-list-link {
-        text-decoration: none;
-        color: #8B8D8F;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        border-bottom: 1px solid transparent;
-        transition: .3s;
-        &:hover {
-            color: #2280E2;
-            border-color:#2280E2;
+    &__catmenu-sub {
+
+        ul {
+            columns: 3;
         }
     }
-
+    
     &__col-menu {
     }
 
